@@ -1,0 +1,17 @@
+In the village of \textit{Bir Zayt}, young Rami is learning clever ways to search through large tables of numbers.  
+He believes that splitting the table into many parts will always make searching faster.  
+But the village elder, \textit{Abu Yazan}, explains that splitting into more parts also requires more comparisons per step,  
+so the optimal choice of how many parts to split into is not obvious.
+
+To settle the debate, Rami asks:
+
+\textit{"For a table of size $n$, what is the best number of parts $k>1$  
+that minimizes the total search cost?"}
+
+The search cost of splitting into $k$ equal parts is modeled in worst case as
+
+$$ C_k \cdot \log_k(n)$$
+
+where $C_k$ is denoted as the number of comparisons required in one search step when splitting into $k$ parts.
+
+Given $n$, determine the integer $k>1$ that yields the most efficient overall search cost.

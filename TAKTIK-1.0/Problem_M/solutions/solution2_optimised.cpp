@@ -1,0 +1,154 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define FastIO ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+
+///-----new feature----///
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+///-end of new feature-///
+template <typename Fi, typename Se> ostream& operator<<(ostream& os, pair<Fi,Se> x){os << '(' << x.fi << ',' << x.se << ')';return os;}
+template <typename T> ostream& operator<<(ostream& os, vector<T> v){for(const auto& x : v)os << x << ' ';return os;}
+void args_out(ostream& os){ os << '\n'; }
+template <typename Head, typename... Tail> void args_out(ostream& os, Head H, Tail... T){os << H << ' ' ;args_out(os, T...);}
+// DebuGGing
+#define pyprint(...) args_out(cout, __VA_ARGS__)
+#define dbg(...) cerr << "--->(" << #__VA_ARGS__ << ") :\n", args_out(cerr, __VA_ARGS__);
+#define sep() cerr << "--------------------" << "\n";
+
+/* Combinatorics
+const int maxn = (int)2e5 + 1; // (^-^)Update me pls(.^.)
+LL fact[maxn], invf[maxn];
+LL P(int n){return fact[n];}
+LL A(int n, int k){return fact[n]*invf[n-k];}
+LL C(int n, int k){return fact[n]*invf[n-k]*invf[k];}
+void preprocess(){
+    //call me once at the start of main (0_0)(;_;)
+    fact[0] = 1;
+    FOR(i,1,maxn)
+        fact[i] = fact[i-1] * i;
+    invf[maxn-1].v = modInverse(fact[maxn-1].v);
+    RFOR(i,maxn-1,0)
+        invf[i] = invf[i+1] * (i+1);
+}
+*/
+//---> Short Data Structures:
+template<typename T> using ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>; // aka indexed_set
+// ordered_set<int> s;
+//s.insert(1);
+//s.order_of_key(3);
+//s.find_by_order(1);
+//s.find(1);
+#define all(x) x.begin(),x.end()
+#define sz(x) (int)(x.size())
+#define fi first
+#define se second
+#define pb push_back
+#define mp make_pair
+#define nl "\n"
+#define YES cout<<"YES"<<nl
+#define NO cout<<"NO"<<nl
+#define yes cout<<"yes"<<nl
+#define no cout<<"no"<<nl
+#define Yes cout<<"Yes"<<nl
+#define No cout<<"No"<<nl
+#define REP(i,n) for(int i = 0 ; i < (n) ; i++)
+#define FOR(i,a,b) for (int i = (a); i < (b); i++)
+
+typedef long long ll;
+typedef unsigned long long ull;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<pii> vii;
+const ll mod = 1e9 + 7;
+// const ll mod = 998244353;
+const ll inf = 1e18;
+
+//---> Graph :
+int dx[4]={1,0,-1,0},dy[4]={0,1,0,-1};
+
+//---> Number Theory :
+ll gcd(ll a, ll b){while(b){swap(a,b);b%=a;}return(a);}
+ll lcm(ll a, ll b){return (a*b)/gcd(a, b);}
+ll po2(ll b, ll e){if(e==0)return 1; ll res = 1;while(e>1){if(e%2)res=(res*b)%mod;e/=2;b=(b*b)%mod;}return(res*b)%mod;}
+ll modInverse(ll a){ return po2(a, mod-2); } // phi[mod] - 1 // assert(gcd(a,mod) == 1);
+
+void solve()
+{
+	ll n,k,y;
+	cin >> n >> k >> y;
+	vector<ll> a(n),b(n);
+	map<ll,ll> mp;
+	REP(i,n)
+	{
+	    cin >> a[i];
+	    a[i]%=k;
+    }
+    REP(i,n)
+        cin >> b[i];
+    REP(i,n)
+        if(b[i]>=k)
+        {
+            NO;
+            return;
+        }
+    if(y==0)
+    {
+        sort(all(a));
+        sort(all(b));
+        REP(i,n)
+            if(a[i]!=b[i])
+            {
+                NO;
+                return;
+            }
+        YES;
+    }
+    else
+    {
+        ll nbr=gcd(k,y),mo,cpt=0;
+        REP(i,n)
+        {    
+            mo=a[i]%nbr;
+            if(mp[mo]==0)
+            {
+                cpt++;
+                mp[mo]++;
+            }
+            else
+                mp[mo]++;
+        }
+        REP(i,n)
+        {
+            mo=b[i]%nbr;
+            if(mp[mo]==0)
+            {
+                NO;
+                return;
+            }
+            else
+            {
+                mp[mo]--;
+                if(mp[mo]==0)
+                    cpt--;
+            }
+        }
+        if(cpt>0)
+            NO;
+        else
+            YES;    
+    }
+    
+}
+
+int main()
+{
+	FastIO;	
+	int t = 1 ;
+	cin >> t;
+	while(t--)
+		solve();
+	return 0;
+}
+

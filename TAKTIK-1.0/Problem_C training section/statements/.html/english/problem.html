@@ -1,0 +1,37 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META content="no-cache" http-equiv="pragma">
+    <META content="-1" http-equiv="expires">
+    <META content="text/html;charset=UTF-8" http-equiv="content-type">
+    <LINK href="problem-statement.css" rel="stylesheet" type="text/css">
+    <TITLE>Merging</TITLE>
+    <SCRIPT type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+        });
+        </SCRIPT>
+        <SCRIPT async="" src="https://polygon.codeforces.com/lib/MathJax/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+    </SCRIPT>
+</HEAD><BODY>
+    <DIV class="problem-statement"><DIV class="header"><DIV class="title">Merging</DIV><DIV class="time-limit"><DIV class="property-title">time limit per test</DIV>1 second</DIV><DIV class="memory-limit"><DIV class="property-title">memory limit per test</DIV>256 megabytes</DIV><DIV class="input-file input-standard"><DIV class="property-title">input</DIV>standard input</DIV><DIV class="output-file output-standard"><DIV class="property-title">output</DIV>standard output</DIV></DIV><DIV class="legend"><P>You are given two non-empty strings $$$s_1$$$ and $$$s_2$$$, consisting of lowercase English letters.</P><P>You want to merge these two strings into a single string in such a way that:</P><P></P><OL> <LI> You can choose the order: either $$$s_1$$$ followed by $$$s_2$$$, or $$$s_2$$$ followed by $$$s_1$$$. </LI><LI> If a non-empty suffix of the first string matches a prefix of the second string, the common part should appear <SPAN class="tex-font-style-bf">only once</SPAN> in the merged string. </LI></OL><P></P><P>Your task is to find the <SPAN class="tex-font-style-bf">shortest possible merged string</SPAN> following the above rules.</P></DIV><P></P><P></P><DIV class="input-specification"><DIV class="section-title">Input</DIV><P></P><P>The first line contains the string $$$s_1$$$ ($$$1 \le |s_1| \le 10^3$$$).</P><P>The second line contains the string $$$s_2$$$ ($$$1 \le |s_2| \le 10^3$$$).</P><P>Both strings consist only of lowercase English letters.</P></DIV><P></P><P></P><DIV class="output-specification"><DIV class="section-title">Output</DIV><P></P><P>Output a single string &mdash; the shortest merged string.If there are multiple shortest strings, output the one that starts with $$$s1$$$.</P></DIV><P></P><P></P><DIV class="sample-tests"><DIV class="section-title">Examples</DIV><P></P><P></P><DIV class="sample-test"><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="abc
+xyz
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">abc</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">xyz</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+abcxyz
+</PRE></DIV><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="a
+a
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">a</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">a</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+a
+</PRE></DIV><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="abc
+bc
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">abc</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">bc</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+abc
+</PRE></DIV><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="abc
+abc
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">abc</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">abc</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+abc
+</PRE></DIV></DIV></DIV></DIV><P></P><P>  </P>
+
+</BODY></HTML>

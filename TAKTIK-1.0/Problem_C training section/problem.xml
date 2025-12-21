@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="2" short-name="concatination-habib" url="https://polygon.codeforces.com/p9uNTox/Hbayeb/concatination-habib">
+    <names>
+        <name language="english" value="Merging"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="english" mathjax="true" path="statements/english/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="english" mathjax="true" path="statements/.html/english/problem.html" type="text/html"/>
+        <statement language="english" path="statements/.pdf/english/problem.pdf" type="application/pdf"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>1000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>27</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test method="manual" sample="true"/>
+                <test method="manual" sample="true"/>
+                <test method="manual" sample="true"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test cmd="gen-habib -n 100 -n1 1000 12" method="generated"/>
+                <test cmd="gen-habib -n 100 -n1 1000 15" method="generated"/>
+                <test cmd="gen-habib -n 500 -n1 900 1" method="generated"/>
+                <test cmd="gen-habib -n 870 -n1 850 20" method="generated"/>
+                <test cmd="gen-habib -n 150 -n1 200 40" method="generated"/>
+                <test cmd="gen-habib -n 19 -n1 12 50" method="generated"/>
+                <test cmd="gen-habib -n 10 -n1 100 60" method="generated"/>
+                <test cmd="gen-habib -n 1000 -n1 100 70" method="generated"/>
+                <test cmd="gen-habib -n 1000 -n1 1000 19" method="generated"/>
+                <test cmd="gen-habib -n 1000 -n1 1000 80" method="generated"/>
+                <test cmd="gen-habib -n 1000 -n1 1000 90" method="generated"/>
+                <test cmd="gen-habib -n 10 -n1 10 90" method="generated"/>
+                <test cmd="gen-habib -n 10 -n1 10 900" method="generated"/>
+                <test cmd="gen-habib -n 10 -n1 10 9000" method="generated"/>
+                <test cmd="gen-habib -n 10 -n1 10 90000" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/gen-habib.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/gen-habib.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/valid.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/valid.exe" type="exe.win32"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::lcmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <binary path="check.exe" type="exe.win32"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/valid.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/valid.exe" type="exe.win32"/>
+                <testset>
+                    <test-count>0</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests/>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="main">
+                <source path="solutions/solu.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="solutions/solu.exe" type="exe.win32"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+</problem>

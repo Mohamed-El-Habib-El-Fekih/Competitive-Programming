@@ -1,0 +1,37 @@
+\begin{problem}{Merging}{standard input}{standard output}{1 second}{256 megabytes}
+
+You are given two non-empty strings $s_1$ and $s_2$, consisting of lowercase English letters.
+
+You want to merge these two strings into a single string in such a way that:
+
+\begin{enumerate}
+    \item You can choose the order: either $s_1$ followed by $s_2$, or $s_2$ followed by $s_1$.
+    \item If a non-empty suffix of the first string matches a prefix of the second string, the common part should appear \textbf{only once} in the merged string.
+\end{enumerate}
+
+Your task is to find the \textbf{shortest possible merged string} following the above rules.
+
+\InputFile
+The first line contains the string $s_1$ ($1 \le |s_1| \le 10^3$).
+
+The second line contains the string $s_2$ ($1 \le |s_2| \le 10^3$).
+
+Both strings consist only of lowercase English letters.
+
+
+
+\OutputFile
+Output a single string --- the shortest merged string.If there are multiple shortest strings, output the one that starts with $s1$.
+
+
+\Examples
+
+\begin{example}
+\exmpfile{example.01}{example.01.a}%
+\exmpfile{example.02}{example.02.a}%
+\exmpfile{example.03}{example.03.a}%
+\exmpfile{example.04}{example.04.a}%
+\end{example}
+
+\end{problem}
+

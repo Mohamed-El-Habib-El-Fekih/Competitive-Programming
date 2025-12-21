@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="23" short-name="permutation-of-hbayeb" url="https://polygon.codeforces.com/p9afuL1/Hbayeb/permutation-of-hbayeb">
+    <names>
+        <name language="english" value="Global Solidarity"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="english" mathjax="true" path="statements/english/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="english" mathjax="true" path="statements/.html/english/problem.html" type="text/html"/>
+        <statement language="english" path="statements/.pdf/english/problem.pdf" type="application/pdf"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>1000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>30</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test cmd="ALL_7" method="generated"/>
+                <test method="manual"/>
+                <test cmd="ALL_8" method="generated"/>
+                <test cmd="ALL_9" method="generated"/>
+                <test method="manual"/>
+                <test cmd="testgen 10 4" method="generated"/>
+                <test cmd="testgen 12 5" method="generated"/>
+                <test cmd="testgen 20 6" method="generated"/>
+                <test cmd="testgen 200 7" method="generated"/>
+                <test cmd="testgen 2000 8" method="generated"/>
+                <test cmd="testgen 20 9" method="generated"/>
+                <test cmd="testgen 200000 1" method="generated"/>
+                <test cmd="testgen 200000 2" method="generated"/>
+                <test cmd="testgen 200000 3" method="generated"/>
+                <test cmd="testgen 200000 4" method="generated"/>
+                <test cmd="testgen 200000 5" method="generated"/>
+                <test cmd="testgen 200000 6" method="generated"/>
+                <test cmd="testgen 200000 7" method="generated"/>
+                <test cmd="testgen 200000 8" method="generated"/>
+                <test cmd="testgen 200000 9" method="generated"/>
+                <test cmd="testgen 200000 10" method="generated"/>
+                <test cmd="add_20test_2e5" method="generated"/>
+                <test cmd="testgen 200000 37" method="generated"/>
+                <test cmd="testgen 200000 39" method="generated"/>
+                <test cmd="testgen 200000 40" method="generated"/>
+                <test cmd="parti" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/ALL_7.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/ALL_7.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/ALL_8.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/ALL_8.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/ALL_9.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/ALL_9.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/add_20test_2e5.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/add_20test_2e5.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/parti.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/parti.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/parti2.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/parti2.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/testgen.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/testgen.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/valid1.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/valid1.exe" type="exe.win32"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::lcmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <binary path="check.exe" type="exe.win32"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/valid1.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="files/valid1.exe" type="exe.win32"/>
+                <testset>
+                    <test-count>0</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests/>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="accepted">
+                <source path="solutions/Main.java" type="java21"/>
+                <binary path="solutions/Main.jar" type="jar"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/WA.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="solutions/WA.exe" type="exe.win32"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/WA1.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="solutions/WA1.exe" type="exe.win32"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/aa.py" type="python.3"/>
+                <binary path="solutions/aa.pys3" type="pythonx.3"/>
+            </solution>
+            <solution tag="main">
+                <source path="solutions/per-habib.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="solutions/per-habib.exe" type="exe.win32"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/permutation-of-hbayeb-python.py" type="python.pypy3-64"/>
+                <binary path="solutions/permutation-of-hbayeb-python.pypys3-64" type="pythonx.pypy3-64"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/permutation-of-hbayeb.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+                <binary path="solutions/permutation-of-hbayeb.exe" type="exe.win32"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+</problem>

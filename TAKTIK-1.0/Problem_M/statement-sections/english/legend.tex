@@ -1,0 +1,30 @@
+\begin{itemize}
+  \item \textbf{Easy version}: You only need to check if it is possible to transform the \textbf{unordered multiset} $A$ such that $(A \bmod k) = B$. If it is possible, print \textbf{YES}; otherwise, print \textbf{NO}.
+  \item \textbf{Hard version}: In addition to deciding whether it is possible, you must also output the minimal number of operations required to achieve it. 
+
+\textbf{NB : } The constraints of the two versions are different.
+\end{itemize}
+
+
+Mohamed Zouari, the brilliant engineer from Sfax, Tunisia, dedicated his life to teaching Palestinian students about \textbf{advanced drone technology} and strategic problem-solving. During one of his lessons, he wanted to emphasize planning, patience, and incremental progress.
+
+On the board, he wrote a challenge for the students. The challenge has two versions:
+
+
+You are given three integers $n$, $k$, and $y$, and two \textbf{unordered multisets}
+$$A = \{a_1, a_2, \dots, a_n\}\quad\text{and}\quad B = \{b_1, b_2, \dots, b_n\}.$$
+
+You are allowed to perform the following operation any number of times (possibly zero):
+\begin{itemize}
+  \item Select an index $i$ ($1 \le i \le n$) and perform $a_i := a_i + y$.
+\end{itemize}
+
+\textbf{Your goal} is to determine whether you can  make $(A \bmod k) = B$ or not.
+
+We say that $A \bmod k = B$ if and only if the following condition holds:
+$$
+\{\, a_i \bmod k \mid 1 \le i \le n \,\}
+=
+\{\, b_i \mid 1 \le i \le n \,\},
+$$
+where both sides are considered as \textbf{unordered multisets}. In other words, after taking each element of $A$ modulo $k$, the resulting multiset of remainders is exactly the same as $B$, ignoring the order of elements but taking into account their multiplicities.For example, the resulting array ($A$ mod $k$) $= [2,3,1,2,4]$ and the resulting $B = [2,2,3,4,1]$ are considered equal, but the resulting array ($A$ mod $k$) $= [1,2,2]$ and $ B =[1,2,3]$  are not equal ($2$ appears twice in the array $A$ while $3$ is absent).

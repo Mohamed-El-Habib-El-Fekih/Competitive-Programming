@@ -1,0 +1,32 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META content="no-cache" http-equiv="pragma">
+    <META content="-1" http-equiv="expires">
+    <META content="text/html;charset=UTF-8" http-equiv="content-type">
+    <LINK href="problem-statement.css" rel="stylesheet" type="text/css">
+    <TITLE>Zouari's Modular Strategy (Easy Version)</TITLE>
+    <SCRIPT type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+        });
+        </SCRIPT>
+        <SCRIPT async="" src="https://polygon.codeforces.com/lib/MathJax/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+    </SCRIPT>
+</HEAD><BODY>
+    <DIV class="problem-statement"><DIV class="header"><DIV class="title">Zouari's Modular Strategy (Easy Version)</DIV><DIV class="time-limit"><DIV class="property-title">time limit per test</DIV>1 second</DIV><DIV class="memory-limit"><DIV class="property-title">memory limit per test</DIV>256 megabytes</DIV><DIV class="input-file input-standard"><DIV class="property-title">input</DIV>standard input</DIV><DIV class="output-file output-standard"><DIV class="property-title">output</DIV>standard output</DIV></DIV><DIV class="legend"><P></P><UL> <LI> <SPAN class="tex-font-style-bf">Easy version</SPAN>: You only need to check if it is possible to transform the <SPAN class="tex-font-style-bf">unordered multiset</SPAN> $$$A$$$ such that $$$(A \bmod k) = B$$$. If it is possible, print <SPAN class="tex-font-style-bf">YES</SPAN>; otherwise, print <SPAN class="tex-font-style-bf">NO</SPAN>. </LI><LI> <SPAN class="tex-font-style-bf">Hard version</SPAN>: In addition to deciding whether it is possible, you must also output the minimal number of operations required to achieve it. <P></P><P><SPAN class="tex-font-style-bf">NB : </SPAN> The constraints of the two versions are different. </P></LI></UL><P></P><P>Mohamed Zouari, the brilliant engineer from Sfax, Tunisia, dedicated his life to teaching Palestinian students about <SPAN class="tex-font-style-bf">advanced drone technology</SPAN> and strategic problem-solving. During one of his lessons, he wanted to emphasize planning, patience, and incremental progress.</P><P>On the board, he wrote a challenge for the students. The challenge has two versions:</P><P>You are given three integers $$$n$$$, $$$k$$$, and $$$y$$$, and two <SPAN class="tex-font-style-bf">unordered multisets</SPAN> $$$$$$A = \{a_1, a_2, \dots, a_n\}\quad\text{and}\quad B = \{b_1, b_2, \dots, b_n\}.$$$$$$</P><P>You are allowed to perform the following operation any number of times (possibly zero): </P><UL> <LI> Select an index $$$i$$$ ($$$1 \le i \le n$$$) and perform $$$a_i := a_i + y$$$. </LI></UL><P></P><P><SPAN class="tex-font-style-bf">Your goal</SPAN> is to determine whether you can make $$$(A \bmod k) = B$$$ or not.</P><P>We say that $$$A \bmod k = B$$$ if and only if the following condition holds: $$$$$$ \{\, a_i \bmod k \mid 1 \le i \le n \,\} = \{\, b_i \mid 1 \le i \le n \,\}, $$$$$$ where both sides are considered as <SPAN class="tex-font-style-bf">unordered multisets</SPAN>. In other words, after taking each element of $$$A$$$ modulo $$$k$$$, the resulting multiset of remainders is exactly the same as $$$B$$$, ignoring the order of elements but taking into account their multiplicities.For example, the resulting array ($$$A$$$ mod $$$k$$$) $$$= [2,3,1,2,4]$$$ and the resulting $$$B = [2,2,3,4,1]$$$ are considered equal, but the resulting array ($$$A$$$ mod $$$k$$$) $$$= [1,2,2]$$$ and $$$ B =[1,2,3]$$$ are not equal ($$$2$$$ appears twice in the array $$$A$$$ while $$$3$$$ is absent).</P></DIV><P></P><P></P><DIV class="input-specification"><DIV class="section-title">Input</DIV><P></P><P>The first line contains a single integer $$$t$$$ $$$(1 \le t \le 10^4)$$$ &mdash; the number of test cases.</P><P>The first line of each test case contains three integers $$$n$$$, $$$k$$$, and $$$y$$$ ($$$1 \le n \le 2 \cdot 10^5$$$, $$$1 \le k \le 10^9$$$, $$$0 \le y \le 10^9$$$).</P><P>The second line of each test case contains $$$n$$$ integers $$$a_1, a_2, \dots, a_n$$$ ($$$0 \le a_i \le 10^9$$$).</P><P>The third line of each test case contains $$$n$$$ integers $$$b_1, b_2, \dots, b_n$$$ ($$$0 \le b_i \le 10^9$$$).</P><P>It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \cdot 10^5$$$ .</P></DIV><P></P><P></P><DIV class="output-specification"><DIV class="section-title">Output</DIV><P></P><P>Print <SPAN class="tex-font-style-bf">YES</SPAN> if it is possible to obtain $$$(A \bmod k) = B$$$ using the allowed operation; otherwise, print <SPAN class="tex-font-style-bf">NO</SPAN>.</P></DIV><P></P><P></P><DIV class="sample-tests"><DIV class="section-title">Example</DIV><P></P><P></P><DIV class="sample-test"><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="3
+5 15 5
+0 0 0 0 0
+5 0 10 10 10
+3 5 2
+1 2 3
+3 4 0
+4 7 0
+10 3 14 7
+3 0 0 0
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">3</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">5 15 5</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">0 0 0 0 0</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">5 0 10 10 10</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">3 5 2</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">1 2 3</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">3 4 0</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">4 7 0</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">10 3 14 7</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">3 0 0 0</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+YES
+YES
+NO
+</PRE></DIV></DIV></DIV></DIV><P></P><P>  </P>
+
+</BODY></HTML>
